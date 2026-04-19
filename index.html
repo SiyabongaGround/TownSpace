@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TownSpace</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navigation bar on home page -->
+<div class="navbar">
+    <h2 class="logo" onclick="showPage('home')">TownSpace</h2>
+    <div>
+        <button onclick="showPage('home')">Home</button>
+        <button onclick="showPage('search')">Browse</button>
+        <button onclick="showPage('wishlist')">Wishlist</button>
+        <button onclick="showPage('list')">List Property</button>
+    </div>
+</div>
+
+
+<!-- Home page -->
+<div id="home" class="page">
+    <div class="hero">
+        <h1>Find affordable rooms in Cape Town townships</h1>
+        <p>Verified listings from local landlords. No agents.</p>
+        <input type="text" id="searchBox" placeholder="Search area e.g. Khayelitsha">
+        <button onclick="searchListings()">Search</button>
+    </div>
+
+    <h2>Featured Listings</h2>
+    <div id="featuredList" class="listings"></div>
+
+    <div class="steps">
+        <h2>How it works</h2>
+        <p><b>1.</b> Search your area</p>
+        <p><b>2.</b> Browse available listings</p>
+        <p><b>3.</b> Contact the landlord directly</p>
+        <p><b>4.</b> Move in</p>
+    </div>
+
+    <div class="cta">
+        <h2>Are you a landlord?</h2>
+        <p>List your property for free</p>
+        <button onclick="showPage('list')">List Property</button>
+    </div>
+</div>
+
+
+<!-- Search Page -->
+<div id="search" class="page" style="display:none;">
+    <h1>Browse Listings</h1>
+
+    <div class="filters">
+        <label>Area:</label>
+        <select id="filterArea" onchange="filterListings()">
+            <option value="all">All areas</option>
+            <option value="Khayelitsha">Khayelitsha</option>
+            <option value="Mitchells Plain">Mitchells Plain</option>
+            <option value="Gugulethu">Gugulethu</option>
+            <option value="Langa">Langa</option>
+            <option value="Langa">Philipi</option>
+            <option value="Wendy">Office</option>
+        </select>
+
+        <label>Type:</label>
+        <select id="filterType" onchange="filterListings()">
+            <option value="all">All types</option>
+            <option value="Room">Room</option>
+            <option value="Backyard">Backyard unit</option>
+            <option value="Wendy">House</option>
+            <option value="Wendy">Office Space</option>
+        </select>
+
+        <label>Max price: R<span id="priceValue">7000</span></label>
+        <input type="range" id="filterPrice" min="500" max="5000" step="100" value="5000" oninput="filterListings()">
+    </div>
+
+    <div id="searchList" class="listings"></div>
+</div>
+
+
+<!-- Property detail page -->
+<div id="detail" class="page" style="display:none;">
+    <button onclick="showPage('search')">&larr; Back</button>
+    <img id="dImage" class="detail-image" src="" alt="Property photo">
+    <h1 id="dTitle"></h1>
+    <p id="dLocation"></p>
+    <h2 id="dPrice"></h2>
+    <p id="dDesc"></p>
+    <h3>Amenities</h3>
+    <ul id="dAmenities"></ul>
+    <h3>Landlord</h3>
+    <p id="dLandlord"></p>
+
+    <!-- WhatsApp share button -->
+    <button class="whatsapp-btn" onclick="shareOnWhatsApp()">
+        Share on WhatsApp
+    </button>
+
+    <h3>Send Enquiry</h3>
+    <div class="form">
+        <input type="text" id="enqName" placeholder="Your name"><br>
+        <input type="date" id="enqDate"><br>
+        <textarea id="enqMsg" placeholder="Your message"></textarea><br>
+        <button onclick="sendEnquiry()">Send Enquiry</button>
+        <button onclick="saveToWishlist()">Save to Wishlist</button>
+    </div>
+</div>
+
+
+<!-- Listing property page -->
+<div id="list" class="page" style="display:none;">
+    <h1>List Your Property</h1>
+    <div class="form">
+        <label>Property title:</label>
+        <input type="text" id="newTitle">
+
+        <label>Area:</label>
+        <select id="newArea">
+            <option>Khayelitsha</option>
+            <option>Mitchells Plain</option>
+            <option>Gugulethu</option>
+            <option>Langa</option>
+            <option>Philipi</option>
+        </select>
+
+        <label>Type:</label>
+        <select id="newType">
+            <option>Room</option>
+            <option>Backyard</option>
+            <option>House</option>
+            <option>Office Space</option>
+        </select>
+
+        <label>Monthly rent (R):</label>
+        <input type="number" id="newPrice">
+
+        <label>Description:</label>
+        <textarea id="newDesc"></textarea>
+
+        <label>Upload property photo:</label>
+        <input type="file" id="newPhoto" accept="image/*" onchange="previewPhoto()">
+        <img id="photoPreview" class="photo-preview" style="display:none;">
+
+        <label>Your name (landlord):</label>
+        <input type="text" id="newLandlord">
+
+        <button onclick="addListing()">Publish Listing</button>
+    </div>
+</div>
+
+
+<!-- WishListing page -->
+<div id="wishlist" class="page" style="display:none;">
+    <h1>My Wishlist</h1>
+    <div id="wishlistList" class="listings"></div>
+</div>
+
+
+<script src="script.js"></script>
+</body>
+</html>

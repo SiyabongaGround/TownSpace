@@ -1,0 +1,293 @@
+/* TownSpace - Simple stylesheet 
+Yellow and Green colour scheme
+*/
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+h1, h2, h3 {
+    color: #2d7a4f;
+}
+
+/* Navigation bar (Home Page) */
+.navbar {
+    background-color: #2d7a4f;
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #f4c430;
+}
+
+.navbar .logo {
+    color: white;
+    margin: 0;
+    cursor: pointer;
+}
+
+.navbar button {
+    background-color: #f4c430;
+    color: #2d7a4f;
+    border: none;
+    padding: 8px 15px;
+    margin-left: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.navbar button:hover {
+    background-color: #e0b020;
+}
+
+/* Pages */
+.page {
+    padding: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Hero section */
+.hero {
+    background-color: #e8f5ee;
+    padding: 40px;
+    text-align: center;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 2px solid #f4c430;
+}
+
+.hero h1 {
+    margin-top: 0;
+}
+
+.hero input[type="text"] {
+    padding: 10px;
+    width: 60%;
+    max-width: 400px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.hero button {
+    padding: 10px 20px;
+    background-color: #f4c430;
+    color: #2d7a4f;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.hero button:hover {
+    background-color: #e0b020;
+}
+
+/* Listing cards */
+.listings {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-top: 4px solid #f4c430;
+    border-radius: 6px;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.card:hover {
+    border-color: #2d7a4f;
+    border-top-color: #f4c430;
+}
+
+.card-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    display: block;
+}
+
+.card h3 {
+    margin: 15px 15px 5px 15px;
+    font-size: 16px;
+}
+
+.card p {
+    margin: 5px 15px;
+    font-size: 14px;
+}
+
+.card .price {
+    color: #2d7a4f;
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Detail page image */
+.detail-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 15px 0;
+    border: 2px solid #f4c430;
+}
+
+/* Photo preview in the list property form */
+.photo-preview {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-top: 10px;
+    border: 2px solid #f4c430;
+}
+
+/* WhatsApp share button */
+.whatsapp-btn {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    margin: 15px 0;
+    display: inline-block;
+}
+
+.whatsapp-btn:hover {
+    background-color: #1ea952;
+}
+
+/* Filters */
+.filters {
+    background-color: white;
+    padding: 15px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.filters label {
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.filters select, .filters input[type="range"] {
+    margin-right: 15px;
+    padding: 5px;
+}
+
+/* How it works (displays on home page) */
+.steps {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+    border-left: 5px solid #f4c430;
+}
+
+/* CTA */
+.cta {
+    background-color: #2d7a4f;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.cta h2 {
+    color: #f4c430;
+    margin-top: 0;
+}
+
+.cta button {
+    background-color: #f4c430;
+    color: #2d7a4f;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.cta button:hover {
+    background-color: #e0b020;
+}
+
+/* Forms */
+.form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    max-width: 500px;
+}
+
+.form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.form input, .form textarea, .form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.form textarea {
+    height: 80px;
+}
+
+.form button {
+    margin-top: 15px;
+    margin-right: 5px;
+    padding: 10px 20px;
+    background-color: #2d7a4f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form button:hover {
+    background-color: #206238;
+}
+
+/* Responsive for mobile device */
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero input[type="text"] {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+}
